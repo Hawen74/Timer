@@ -1,0 +1,236 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #213547;
+  background-color: #ffffff; /* White background */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* General */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  background-color: rgb(255, 255, 180);
+  color: #213547;
+  transition: background-color 0.4s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: inherit;
+  filter: blur(5px) brightness(0.7);
+  z-index: -1;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+a {
+  font-weight: 500;
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0c52c2;
+  text-decoration: underline;
+}
+
+/* Buttons */
+button {
+  border-radius: 8px;
+  border: none;
+  padding: 0.6em 1.2em;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: all 0.25s;
+  width: 125px;
+}
+
+button:hover {
+  border-color: black;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Button colors */
+.start-button {
+  background-color: rgb(80, 255, 80);
+}
+
+.stop-button {
+  background-color: red;
+}
+
+.reset-button {
+  background-color: yellow;
+}
+
+/* Layout */
+.box {
+  border: 5px solid black;
+  border-radius: 10px;
+  margin: auto;
+  padding: 15px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.clock {
+  font-family: monospace;
+  font-size: 5rem;
+  color: black;
+}
+
+.cycle {
+  margin-bottom: 15px;
+  font-size: 2.5rem;
+}
+
+/* Button wrapper */
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Setting icon box */
+.study_break {
+  display: flex; 
+  gap: 8px;
+}
+
+.study_break button {
+  border: 1px lightgray solid;
+  background-color: aqua;
+}
+
+.study_break button.active {
+  background-color: #3d8eff;
+}
+
+.setting-icon {
+  /* border: 1px solid gray;
+  border-radius: 10px; */
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Popup Box */
+.setting_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 5px solid black;
+  border-radius: 10px;
+  background-color: wheat;
+  width: 415px;
+  height: 400px;
+  padding: 0 20px;
+  gap: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Timeline row */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 15px 0px;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto; /* Center it horizontally */
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.timeline p {
+  font-size: 28px;
+  font-family: monospace;
+  color: #333;
+  margin: 0;
+  font-weight: bold;
+}
+
+.timeline input {
+  padding: 20px;
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+  height: 70px;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.timeline input:focus {
+  border-color: #0077ff;
+  box-shadow: 0 0 8px rgba(0, 119, 255, 0.2);
+}
+
+/* Button functions under setting */
+.button-function {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.button-function button {
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
